@@ -170,6 +170,7 @@ admin = Role.make_admin(active_user)
 # Pipe Operator
 - Push a subject through a series of functions
 - Pass the result of one function to the next
+
 ```elixir
 # Normal, crowded
 to_string(Enum.sum(Enum.map([1,2,3], &MyModule.double/1)))
@@ -212,10 +213,52 @@ end
 
 # Pattern Matching
 
+```elixir
+case :foo do
+  99   -> "boo"
+  :foo -> "yey"
+  _    -> "wat" # Matches anything
+end
+#=> "yey"
+
+# Selects *first* match on the way down
+case :foo do
+  _    -> "wat"
+  99   -> "boo"
+  :foo -> "yey"
+end
+#=> "wat"
+```
+
+---
+<!-- *template: invert -->
+
+# Structural Pattern Match
+
+```elixir
+case [1,2,3] do
+  [head | _]  -> head
+  %{foo: foo} -> foo
+  _ -> raise "no match"
+end
+#=> 1
+
+case %{foo: "hello", bar: "world", baz: "nope"} do
+  %{foo: foo, bar: bar} -> "#{foo} #{bar}"
+  %{bar: bar} -> bar
+  _  -> "welp"
+end
+#=> "hello world"
+
+```
+
 ---
 <!-- *template: invert -->
 
 # Arity
+
+```elixir
+```
 
 ---
 <!-- *template: invert -->
