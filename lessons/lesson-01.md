@@ -85,12 +85,57 @@ test(N)->
 ```
 
 ---
+
+# Language Basics
+
+---
 <!-- *template: invert -->
 
-# Not Object-Oriented
+# Types
+- Elixir is weakly typed
+  - Can annotate your types with ==@specs== (will see later)
+- Atom ==:ok==, ==:error==, ==:foo==
+- Integer, float ==1==, ==99.9==
+- Keyword lists ==[foo: 1, bar: "hi!"]==
+- Binaries ==<<0,1,0,0,0,1>>==
+- Characters, charlists, strings =='f'==, ==['f', 'o', 'o']==, =="foo"==
+- Maps, structs ==%{foo: 1, bar: "hello!"}==, ==%User{name: "Grumpy Cat"}==
+
+---
+<!-- *template: invert -->
+
+# Type Truthiness
+
+|                   | Truthy | Falsey |
+|------------------:|:------:|:------:|
+| `true`            | ✓     |        |
+| `false`           |        | ✓     |
+| `nil`             |        | ✓     |
+| Empty string `""` | ✓     |        |
+| Empty list `[]`   | ✓     |        |
+| anything else     | ✓     |        |
+
+---
+<!-- *template: invert -->
+
+# Elixir is not Object-Oriented
+
 - No function dot-notation
 - Immutible (no way to directly alter a value)
 - 
+
+---
+<!-- *template: invert -->
+
+# Functional Programming 101
+
+- Data-first
+- Explicit state rather than hiding
+- Limit & isolate side effects
+- Referential transparency
+- Composition over inheritance
+- Expressions versus objects with messages
+- Not mutually exclusive with OO (see Scala, Swift, Rust, &c)
 
 ---
 <!-- *template: invert -->
