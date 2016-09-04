@@ -2,17 +2,15 @@
 <!-- $size: 16:9 -->
 
 # Elixir from the Ground Up
-## ![Elixir Logo](https://avatars2.githubusercontent.com/u/1481354?v=3&s=400)
+## ![30%](https://avatars2.githubusercontent.com/u/1481354?v=3&s=400)![](https://lever-client-logos.s3.amazonaws.com/logo_color@2x-3a2ee589.png) ![](http://emojipedia-us.s3.amazonaws.com/cache/09/36/093609b96d67b99f68fc329a9b2aff6f.png)
 
 ---
-
-<!-- *template: invert -->
 
 # Part One
 ## Introduction & Basics
 
 ---
-
+<!-- *template: invert -->
 # What We're Going to Cover
 - Background
 - Syntax
@@ -23,22 +21,24 @@
 
 ---
 
+# What is Elixir?
+
+---
 <!-- *template: invert -->
 
 # What is Elixir?
 
----
-
-# What is Elixir?
-
 - Functional programming lanaguge
-- Focus on concurrency and fault-tolerance
+- Concurrent, fault-tolerant, hot-swappable
+- Actor Model
 - Runs on the Erlang VM (BEAM)
+- Meta-programming
 - Ruby-_inspired_ syntax & philosophy
 - Friendly community 
-  - JIKASWAK: José is kind so we are also kind
+  - JIKASWAK: "José is kind so we are also kind"
 
 ---
+<!-- *template: invert -->
 
 # Is Elixir just a faster Ruby?
 
@@ -54,11 +54,34 @@
 
 ---
 
+<!-- *template: invert -->
+
+# Erlang
+- Developed by Ericsson in 1986 to run network switches
+  - Need high uptime, automatic recovery, soft-realtime, streaming
+- Used in every phone call that you've ever made
+- Unusual syntax (based on Prolog)
+
+```erlang
+%% Author: Arjun Sunel via Rosetta Code
+main()-> test(8).
+test(N)->
+	if (N rem 2)==1 -> io:format("odd\n");
+	true -> io:format("even\n")
+	end.			
+```
+
+---
+
+<!-- *template: invert -->
+
 # Not Object-Oriented
 - No function dot-notation
 - Immutible (no way to directly alter a value)
 
 ---
+
+<!-- *template: invert -->
 
 ```ruby
 # Ruby
@@ -86,6 +109,8 @@ admin = Role.make_admin(active_user)
 
 ---
 
+<!-- *template: invert -->
+
 # Pipe Operator
 
 ```elixir
@@ -108,6 +133,8 @@ to_string(Enum.sum(Enum.map([1,2,3], &MyModule.double/1)))
 #=> "12"
 ```
 
+---
+<!-- *template: invert -->
 
 # Modules, not Classes
 
@@ -124,4 +151,12 @@ end
 
 ---
 
+<!-- *template: invert -->
+
 # Arity
+
+---
+
+# Actor Model
+- Not unique to Erlang/Elixir
+  - Nice that it's in the standard lib, though
